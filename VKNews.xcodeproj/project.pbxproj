@@ -18,6 +18,7 @@
 		F1F71AF629C49FBE0073F51C /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */; };
 		F1F71AF829C4C1720073F51C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AF729C4C1720073F51C /* FeedViewController.swift */; };
 		F1F71AFE29C4C43B0073F51C /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F71AFD29C4C43B0073F51C /* FeedViewController.storyboard */; };
+		F1F71B0029C4D7E90073F51C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AFF29C4D7E90073F51C /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		F1F71AF729C4C1720073F51C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F1F71AFD29C4C43B0073F51C /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
+		F1F71AFF29C4D7E90073F51C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				F1F71AF229C49C220073F51C /* AuthService.swift */,
+				F1F71AFF29C4D7E90073F51C /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				F19AF48F29C255E3004DC562 /* AppDelegate.swift in Sources */,
 				F1F71AF829C4C1720073F51C /* FeedViewController.swift in Sources */,
 				F19AF49129C255E3004DC562 /* SceneDelegate.swift in Sources */,
+				F1F71B0029C4D7E90073F51C /* NetworkService.swift in Sources */,
 				F1F71AF329C49C220073F51C /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
