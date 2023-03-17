@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		F19AF48F29C255E3004DC562 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19AF48E29C255E3004DC562 /* AppDelegate.swift */; };
 		F19AF49129C255E3004DC562 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19AF49029C255E3004DC562 /* SceneDelegate.swift */; };
-		F19AF49329C255E3004DC562 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19AF49229C255E3004DC562 /* ViewController.swift */; };
-		F19AF49629C255E3004DC562 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19AF49429C255E3004DC562 /* Main.storyboard */; };
+		F19AF49329C255E3004DC562 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19AF49229C255E3004DC562 /* AuthViewController.swift */; };
 		F19AF49829C255E4004DC562 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19AF49729C255E4004DC562 /* Assets.xcassets */; };
 		F19AF49B29C255E4004DC562 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19AF49929C255E4004DC562 /* LaunchScreen.storyboard */; };
 		F19AF4A429C26D46004DC562 /* VKSdkFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */; };
 		F19AF4A529C26D46004DC562 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F1F71AF329C49C220073F51C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AF229C49C220073F51C /* AuthService.swift */; };
+		F1F71AF629C49FBE0073F51C /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */; };
+		F1F71AF829C4C1720073F51C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AF729C4C1720073F51C /* FeedViewController.swift */; };
+		F1F71AFE29C4C43B0073F51C /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F71AFD29C4C43B0073F51C /* FeedViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,12 +38,15 @@
 		F19AF48B29C255E3004DC562 /* VKNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19AF48E29C255E3004DC562 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19AF49029C255E3004DC562 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F19AF49229C255E3004DC562 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F19AF49529C255E3004DC562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F19AF49229C255E3004DC562 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F19AF49729C255E4004DC562 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F19AF49A29C255E4004DC562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F19AF49C29C255E4004DC562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
+		F1F71AF229C49C220073F51C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
+		F1F71AF729C4C1720073F51C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		F1F71AFD29C4C43B0073F51C /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +83,9 @@
 			children = (
 				F19AF48E29C255E3004DC562 /* AppDelegate.swift */,
 				F19AF49029C255E3004DC562 /* SceneDelegate.swift */,
-				F19AF49229C255E3004DC562 /* ViewController.swift */,
-				F19AF49429C255E3004DC562 /* Main.storyboard */,
+				F1F71AFC29C4C2540073F51C /* Auth */,
+				F1F71AFB29C4C2110073F51C /* FeedViewContoller */,
+				F1F71AF429C49C2E0073F51C /* Services */,
 				F19AF49729C255E4004DC562 /* Assets.xcassets */,
 				F19AF49929C255E4004DC562 /* LaunchScreen.storyboard */,
 				F19AF49C29C255E4004DC562 /* Info.plist */,
@@ -92,6 +99,32 @@
 				F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1F71AF429C49C2E0073F51C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F1F71AF229C49C220073F51C /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F1F71AFB29C4C2110073F51C /* FeedViewContoller */ = {
+			isa = PBXGroup;
+			children = (
+				F1F71AF729C4C1720073F51C /* FeedViewController.swift */,
+				F1F71AFD29C4C43B0073F51C /* FeedViewController.storyboard */,
+			);
+			path = FeedViewContoller;
+			sourceTree = "<group>";
+		};
+		F1F71AFC29C4C2540073F51C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F19AF49229C255E3004DC562 /* AuthViewController.swift */,
+				F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +188,8 @@
 			files = (
 				F19AF49B29C255E4004DC562 /* LaunchScreen.storyboard in Resources */,
 				F19AF49829C255E4004DC562 /* Assets.xcassets in Resources */,
-				F19AF49629C255E3004DC562 /* Main.storyboard in Resources */,
+				F1F71AF629C49FBE0073F51C /* AuthViewController.storyboard in Resources */,
+				F1F71AFE29C4C43B0073F51C /* FeedViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,23 +200,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F19AF49329C255E3004DC562 /* ViewController.swift in Sources */,
+				F19AF49329C255E3004DC562 /* AuthViewController.swift in Sources */,
 				F19AF48F29C255E3004DC562 /* AppDelegate.swift in Sources */,
+				F1F71AF829C4C1720073F51C /* FeedViewController.swift in Sources */,
 				F19AF49129C255E3004DC562 /* SceneDelegate.swift in Sources */,
+				F1F71AF329C49C220073F51C /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F19AF49429C255E3004DC562 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F19AF49529C255E3004DC562 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F19AF49929C255E4004DC562 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -318,11 +346,13 @@
 				DEVELOPMENT_TEAM = 7J4GDFSRND;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VKNews/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VKNews;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,11 +376,13 @@
 				DEVELOPMENT_TEAM = 7J4GDFSRND;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VKNews/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VKNews;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
