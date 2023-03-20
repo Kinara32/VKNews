@@ -15,7 +15,8 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
 
         fetcher.getFeed { feedResponse in
-            print(feedResponse as Any)
+            guard let feedResponse = feedResponse else { return }
+            print(feedResponse)
         }
         view.backgroundColor = .cyan
     }

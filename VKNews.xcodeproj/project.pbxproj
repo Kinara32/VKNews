@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1871BB929C90B8D00BD3D12 /* NewsfeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB229C90B8D00BD3D12 /* NewsfeedPresenter.swift */; };
+		F1871BBA29C90B8D00BD3D12 /* NewsfeedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB329C90B8D00BD3D12 /* NewsfeedWorker.swift */; };
+		F1871BBB29C90B8D00BD3D12 /* NewsfeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB429C90B8D00BD3D12 /* NewsfeedRouter.swift */; };
+		F1871BBC29C90B8D00BD3D12 /* NewsfeedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB529C90B8D00BD3D12 /* NewsfeedModels.swift */; };
+		F1871BBD29C90B8D00BD3D12 /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB629C90B8D00BD3D12 /* NewsfeedViewController.swift */; };
+		F1871BBE29C90B8D00BD3D12 /* NewsfeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB729C90B8D00BD3D12 /* NewsfeedInteractor.swift */; };
+		F1871BBF29C90B8D00BD3D12 /* NewsfeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1871BB829C90B8D00BD3D12 /* NewsfeedViewController.xib */; };
 		F19AF48F29C255E3004DC562 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19AF48E29C255E3004DC562 /* AppDelegate.swift */; };
 		F19AF49129C255E3004DC562 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19AF49029C255E3004DC562 /* SceneDelegate.swift */; };
 		F19AF49329C255E3004DC562 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19AF49229C255E3004DC562 /* AuthViewController.swift */; };
@@ -38,6 +45,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F1871BB229C90B8D00BD3D12 /* NewsfeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedPresenter.swift; sourceTree = "<group>"; };
+		F1871BB329C90B8D00BD3D12 /* NewsfeedWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedWorker.swift; sourceTree = "<group>"; };
+		F1871BB429C90B8D00BD3D12 /* NewsfeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedRouter.swift; sourceTree = "<group>"; };
+		F1871BB529C90B8D00BD3D12 /* NewsfeedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedModels.swift; sourceTree = "<group>"; };
+		F1871BB629C90B8D00BD3D12 /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
+		F1871BB729C90B8D00BD3D12 /* NewsfeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedInteractor.swift; sourceTree = "<group>"; };
+		F1871BB829C90B8D00BD3D12 /* NewsfeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsfeedViewController.xib; sourceTree = "<group>"; };
 		F19AF48B29C255E3004DC562 /* VKNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19AF48E29C255E3004DC562 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19AF49029C255E3004DC562 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1871BB129C90B4E00BD3D12 /* NewsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				F1871BB629C90B8D00BD3D12 /* NewsfeedViewController.swift */,
+				F1871BB829C90B8D00BD3D12 /* NewsfeedViewController.xib */,
+				F1871BB729C90B8D00BD3D12 /* NewsfeedInteractor.swift */,
+				F1871BB229C90B8D00BD3D12 /* NewsfeedPresenter.swift */,
+				F1871BB529C90B8D00BD3D12 /* NewsfeedModels.swift */,
+				F1871BB329C90B8D00BD3D12 /* NewsfeedWorker.swift */,
+				F1871BB429C90B8D00BD3D12 /* NewsfeedRouter.swift */,
+			);
+			path = NewsFeed;
+			sourceTree = "<group>";
+		};
 		F19AF48229C255E3004DC562 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +119,7 @@
 				F19AF49029C255E3004DC562 /* SceneDelegate.swift */,
 				F1F71AFC29C4C2540073F51C /* Auth */,
 				F1F71AFB29C4C2110073F51C /* FeedViewContoller */,
+				F1871BB129C90B4E00BD3D12 /* NewsFeed */,
 				F1F71AF429C49C2E0073F51C /* Services */,
 				F19AF49729C255E4004DC562 /* Assets.xcassets */,
 				F19AF49929C255E4004DC562 /* LaunchScreen.storyboard */,
@@ -197,6 +226,7 @@
 			files = (
 				F19AF49B29C255E4004DC562 /* LaunchScreen.storyboard in Resources */,
 				F19AF49829C255E4004DC562 /* Assets.xcassets in Resources */,
+				F1871BBF29C90B8D00BD3D12 /* NewsfeedViewController.xib in Resources */,
 				F1F71AF629C49FBE0073F51C /* AuthViewController.storyboard in Resources */,
 				F1F71AFE29C4C43B0073F51C /* FeedViewController.storyboard in Resources */,
 			);
@@ -209,14 +239,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1871BBC29C90B8D00BD3D12 /* NewsfeedModels.swift in Sources */,
+				F1871BBB29C90B8D00BD3D12 /* NewsfeedRouter.swift in Sources */,
+				F1871BBA29C90B8D00BD3D12 /* NewsfeedWorker.swift in Sources */,
 				F1F71B0629C7EAFB0073F51C /* NetworkDataFetcher.swift in Sources */,
 				F19AF49329C255E3004DC562 /* AuthViewController.swift in Sources */,
+				F1871BBD29C90B8D00BD3D12 /* NewsfeedViewController.swift in Sources */,
 				F1F71B0429C7E7120073F51C /* FeedResponse.swift in Sources */,
+				F1871BB929C90B8D00BD3D12 /* NewsfeedPresenter.swift in Sources */,
 				F19AF48F29C255E3004DC562 /* AppDelegate.swift in Sources */,
 				F1F71AF829C4C1720073F51C /* FeedViewController.swift in Sources */,
 				F19AF49129C255E3004DC562 /* SceneDelegate.swift in Sources */,
 				F1F71B0029C4D7E90073F51C /* NetworkService.swift in Sources */,
 				F1F71AF329C49C220073F51C /* AuthService.swift in Sources */,
+				F1871BBE29C90B8D00BD3D12 /* NewsfeedInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
