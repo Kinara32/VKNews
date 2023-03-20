@@ -9,13 +9,13 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
-    private let networkServise = NetworkService()
+    private var fetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkServise.request(path: Api.newsFeed, params: ["filters": "post,photo"]) { data, error in
-            
-            print(try! JSONSerialization.jsonObject(with: data!))
+
+        fetcher.getFeed { feedResponse in
+            print(feedResponse as Any)
         }
         view.backgroundColor = .cyan
     }
