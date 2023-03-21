@@ -13,7 +13,7 @@
 		F1871BBC29C90B8D00BD3D12 /* NewsfeedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB529C90B8D00BD3D12 /* NewsfeedModels.swift */; };
 		F1871BBD29C90B8D00BD3D12 /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB629C90B8D00BD3D12 /* NewsfeedViewController.swift */; };
 		F1871BBE29C90B8D00BD3D12 /* NewsfeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB729C90B8D00BD3D12 /* NewsfeedInteractor.swift */; };
-		F1871BBF29C90B8D00BD3D12 /* NewsfeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1871BB829C90B8D00BD3D12 /* NewsfeedViewController.xib */; };
+		F1871BC129CA1AF100BD3D12 /* NewsfeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1871BC029CA1AF100BD3D12 /* NewsfeedViewController.storyboard */; };
 		F19AF48F29C255E3004DC562 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19AF48E29C255E3004DC562 /* AppDelegate.swift */; };
 		F19AF49129C255E3004DC562 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19AF49029C255E3004DC562 /* SceneDelegate.swift */; };
 		F19AF49329C255E3004DC562 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19AF49229C255E3004DC562 /* AuthViewController.swift */; };
@@ -51,7 +51,7 @@
 		F1871BB529C90B8D00BD3D12 /* NewsfeedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedModels.swift; sourceTree = "<group>"; };
 		F1871BB629C90B8D00BD3D12 /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
 		F1871BB729C90B8D00BD3D12 /* NewsfeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedInteractor.swift; sourceTree = "<group>"; };
-		F1871BB829C90B8D00BD3D12 /* NewsfeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsfeedViewController.xib; sourceTree = "<group>"; };
+		F1871BC029CA1AF100BD3D12 /* NewsfeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsfeedViewController.storyboard; sourceTree = "<group>"; };
 		F19AF48B29C255E3004DC562 /* VKNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19AF48E29C255E3004DC562 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F19AF49029C255E3004DC562 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F1871BB629C90B8D00BD3D12 /* NewsfeedViewController.swift */,
-				F1871BB829C90B8D00BD3D12 /* NewsfeedViewController.xib */,
+				F1871BC029CA1AF100BD3D12 /* NewsfeedViewController.storyboard */,
 				F1871BB729C90B8D00BD3D12 /* NewsfeedInteractor.swift */,
 				F1871BB229C90B8D00BD3D12 /* NewsfeedPresenter.swift */,
 				F1871BB529C90B8D00BD3D12 /* NewsfeedModels.swift */,
@@ -226,7 +226,7 @@
 			files = (
 				F19AF49B29C255E4004DC562 /* LaunchScreen.storyboard in Resources */,
 				F19AF49829C255E4004DC562 /* Assets.xcassets in Resources */,
-				F1871BBF29C90B8D00BD3D12 /* NewsfeedViewController.xib in Resources */,
+				F1871BC129CA1AF100BD3D12 /* NewsfeedViewController.storyboard in Resources */,
 				F1F71AF629C49FBE0073F51C /* AuthViewController.storyboard in Resources */,
 				F1F71AFE29C4C43B0073F51C /* FeedViewController.storyboard in Resources */,
 			);
