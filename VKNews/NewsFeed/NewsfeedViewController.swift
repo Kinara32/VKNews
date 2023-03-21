@@ -17,6 +17,8 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic {
     var interactor: NewsfeedBusinessLogic?
     var router: (NSObjectProtocol & NewsfeedRoutingLogic)?
     
+    private var feedViewModel = FeedViewModel(cellArr: [])
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -44,36 +46,33 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic {
         super.viewDidLoad()
         setup()
         tableView.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
+        interactor?.makeRequest(request: .getNewsFeed)
     }
     
     func displayData(viewModel: Newsfeed.Model.ViewModel.ViewModelData) {
         
         switch viewModel {
-            case .some:
-                print(".some viewModel")
-            case .displayNewsFeed:
-                print(".displayNewsFeed ViewController")
+            case .displayNewsFeed(feedViewModel: let feedViewModel):
+                self.feedViewModel = feedViewModel
+                tableView.reloadData()
         }
     }
-    
 }
 
 extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return feedViewModel.cellArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: NewsFeedCell.reuseId, for: indexPath) as! NewsFeedCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedCell.reuseId, for: indexPath) as! NewsFeedCell
+        cell.setUI(viewModel: feedViewModel.cellArr[indexPath.row])
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 212
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select row")
-        interactor?.makeRequest(request: .getFeed)
-    }
 }

@@ -25,8 +25,6 @@
 		F19AF4A529C26D46004DC562 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F1F71AF329C49C220073F51C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AF229C49C220073F51C /* AuthService.swift */; };
 		F1F71AF629C49FBE0073F51C /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */; };
-		F1F71AF829C4C1720073F51C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AF729C4C1720073F51C /* FeedViewController.swift */; };
-		F1F71AFE29C4C43B0073F51C /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F71AFD29C4C43B0073F51C /* FeedViewController.storyboard */; };
 		F1F71B0029C4D7E90073F51C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AFF29C4D7E90073F51C /* NetworkService.swift */; };
 		F1F71B0429C7E7120073F51C /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71B0329C7E7120073F51C /* FeedResponse.swift */; };
 		F1F71B0629C7EAFB0073F51C /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71B0529C7EAFB0073F51C /* NetworkDataFetcher.swift */; };
@@ -66,8 +64,6 @@
 		F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
 		F1F71AF229C49C220073F51C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
-		F1F71AF729C4C1720073F51C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		F1F71AFD29C4C43B0073F51C /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
 		F1F71AFF29C4D7E90073F51C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F1F71B0329C7E7120073F51C /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 		F1F71B0529C7EAFB0073F51C /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
@@ -132,7 +128,6 @@
 				F19AF48E29C255E3004DC562 /* AppDelegate.swift */,
 				F19AF49029C255E3004DC562 /* SceneDelegate.swift */,
 				F1F71AFC29C4C2540073F51C /* Auth */,
-				F1F71AFB29C4C2110073F51C /* FeedViewContoller */,
 				F1871BB129C90B4E00BD3D12 /* NewsFeed */,
 				F1F71AF429C49C2E0073F51C /* Services */,
 				F19AF49729C255E4004DC562 /* Assets.xcassets */,
@@ -159,15 +154,6 @@
 				F1F71B0529C7EAFB0073F51C /* NetworkDataFetcher.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		F1F71AFB29C4C2110073F51C /* FeedViewContoller */ = {
-			isa = PBXGroup;
-			children = (
-				F1F71AF729C4C1720073F51C /* FeedViewController.swift */,
-				F1F71AFD29C4C43B0073F51C /* FeedViewController.storyboard */,
-			);
-			path = FeedViewContoller;
 			sourceTree = "<group>";
 		};
 		F1F71AFC29C4C2540073F51C /* Auth */ = {
@@ -243,7 +229,6 @@
 				F1871BC629CA260000BD3D12 /* NewsFeedCell.xib in Resources */,
 				F1871BC129CA1AF100BD3D12 /* NewsfeedViewController.storyboard in Resources */,
 				F1F71AF629C49FBE0073F51C /* AuthViewController.storyboard in Resources */,
-				F1F71AFE29C4C43B0073F51C /* FeedViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +249,6 @@
 				F1F71B0429C7E7120073F51C /* FeedResponse.swift in Sources */,
 				F1871BB929C90B8D00BD3D12 /* NewsfeedPresenter.swift in Sources */,
 				F19AF48F29C255E3004DC562 /* AppDelegate.swift in Sources */,
-				F1F71AF829C4C1720073F51C /* FeedViewController.swift in Sources */,
 				F19AF49129C255E3004DC562 /* SceneDelegate.swift in Sources */,
 				F1F71B0029C4D7E90073F51C /* NetworkService.swift in Sources */,
 				F1F71AF329C49C220073F51C /* AuthService.swift in Sources */,
