@@ -9,14 +9,14 @@ import UIKit
 
 class WebImageView: UIImageView {
     
-    func setIcon(_ imageURL: String) {
-        guard let url = URL(string: imageURL) else { return }
+    func setIcon(_ imageURL: String?) {
+        guard let imageURL = imageURL, let url = URL(string: imageURL) else { return }
         if let cachedResponse = URLCache.shared.cachedResponse(for: URLRequest(url: url)) {
             image = UIImage(data: cachedResponse.data)
-            print("cache")
+//            print("cache")
             return
         }
-        print("internet")
+//        print("internet")
         let dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, response, _) in
             DispatchQueue.main.async {
                 if let data = data, let response = response {

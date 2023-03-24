@@ -25,7 +25,9 @@ class NewsfeedInteractor: NewsfeedBusinessLogic {
         switch request {
             case .getNewsFeed:
                 print(".getFeed Interactor")
+                
                 networkDataFetcher.getFeed {[weak self] feedResponse in
+                    feedResponse?.items.map{ print($0.attachments) }
                     guard let feedResponse = feedResponse else {return}
                     self?.presenter?.presentData(response: .presentNewsFeed(feed: feedResponse))
                 }
