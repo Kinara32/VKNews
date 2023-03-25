@@ -24,6 +24,7 @@
 		F19AF49B29C255E4004DC562 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19AF49929C255E4004DC562 /* LaunchScreen.storyboard */; };
 		F19AF4A429C26D46004DC562 /* VKSdkFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */; };
 		F19AF4A529C26D46004DC562 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F1DB8C2E29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB8C2D29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift */; };
 		F1F71AF329C49C220073F51C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AF229C49C220073F51C /* AuthService.swift */; };
 		F1F71AF629C49FBE0073F51C /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */; };
 		F1F71B0029C4D7E90073F51C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AFF29C4D7E90073F51C /* NetworkService.swift */; };
@@ -64,6 +65,7 @@
 		F19AF49A29C255E4004DC562 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F19AF49C29C255E4004DC562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
+		F1DB8C2D29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
 		F1F71AF229C49C220073F51C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		F1F71AFF29C4D7E90073F51C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				F199BC1329CB959C003F4773 /* WebImageView.swift */,
 				F1871BC329CA253A00BD3D12 /* NewsFeedCell.swift */,
+				F1DB8C2D29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift */,
 				F1871BC529CA260000BD3D12 /* NewsFeedCell.xib */,
 			);
 			path = Cell;
@@ -256,6 +259,7 @@
 				F1F71B0029C4D7E90073F51C /* NetworkService.swift in Sources */,
 				F1F71AF329C49C220073F51C /* AuthService.swift in Sources */,
 				F199BC1429CB959C003F4773 /* WebImageView.swift in Sources */,
+				F1DB8C2E29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift in Sources */,
 				F1871BBE29C90B8D00BD3D12 /* NewsfeedInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

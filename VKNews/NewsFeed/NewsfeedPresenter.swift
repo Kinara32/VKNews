@@ -15,6 +15,13 @@ protocol NewsfeedPresentationLogic {
 class NewsfeedPresenter: NewsfeedPresentationLogic {
     
     weak var viewController: NewsfeedDisplayLogic?
+    
+    var cellLayoutCalculator: FeedCellLayoutCalculatorProtocol? = {
+        guard let width = SceneDelegate.shared().window?.windowScene?.screen.bounds.width,
+                let height = SceneDelegate.shared().window?.windowScene?.screen.bounds.height else {return nil}
+        return FeedCellLayoutCalculator(screenWidth: min(width, height))
+    }()
+    
     var dateFormatter: DateFormatter {
         let dt = DateFormatter()
         dt.locale = Locale(identifier: "ru_RU")
@@ -42,6 +49,8 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
         let dateTitle = dateFormatter.string(from: date)
         let photoAttachment = photoAttachment(feedItem: feedItem)
         
+        let sizes = cellLayoutCalculator?.sizes(postText: feedItem.text, photoAttachment: photoAttachment) ?? Sizes(postLabelFrame: .zero, attachmentFrame: .zero)
+        
         return FeedViewModel.Cell(iconUrlString: profile?.photo ?? "",
                                   name: profile?.name ?? "",
                                   date: dateTitle,
@@ -50,7 +59,9 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
                                   comments: String(feedItem.views?.count ?? 0),
                                   shares: String(feedItem.reposts?.count ?? 0),
                                   views: String(feedItem.views?.count ?? 0),
-                                  photoAttachment: photoAttachment)
+                                  photoAttachment: photoAttachment,
+                                  sizes: sizes)
+        
     }
     
     private func profile(for sourseId: Int, profiles: [Profile], groups: [Group]) -> ProfileRepresenatable? {
