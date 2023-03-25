@@ -31,6 +31,7 @@ class NewsFeedCell: UITableViewCell {
     
     static let reuseId = "NewsFeedCell"
     
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconImageView: WebImageView!
     @IBOutlet weak var postImageView: WebImageView!
@@ -44,6 +45,13 @@ class NewsFeedCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        iconImageView.layer.cornerRadius = iconImageView.frame.width / 2
+        iconImageView.clipsToBounds = true
+        
+        cardView.layer.cornerRadius = 10
+        cardView.clipsToBounds = true
+//        backgroundColor = .clear
+        selectionStyle = .none
     }
     
     func setUI(viewModel: FeedCellViewModel) {
