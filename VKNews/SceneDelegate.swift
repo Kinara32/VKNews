@@ -79,6 +79,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
         print(#function)
         let feedVC = UIStoryboard(name: "NewsfeedViewController", bundle: nil).instantiateInitialViewController() as! NewsfeedViewController
         let navVC = UINavigationController(rootViewController: feedVC)
+        navVC.isNavigationBarHidden = true
         window?.rootViewController = navVC
     }
     
