@@ -26,6 +26,7 @@
 		F19AF4A529C26D46004DC562 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F1DB8C2E29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB8C2D29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift */; };
 		F1DB8C3029D3880E00BDDB7F /* NewsFeedCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB8C2F29D3880E00BDDB7F /* NewsFeedCodeCell.swift */; };
+		F1DB8C3229D3AE1E00BDDB7F /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB8C3129D3AE1E00BDDB7F /* Constraints.swift */; };
 		F1F71AF329C49C220073F51C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AF229C49C220073F51C /* AuthService.swift */; };
 		F1F71AF629C49FBE0073F51C /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */; };
 		F1F71B0029C4D7E90073F51C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F71AFF29C4D7E90073F51C /* NetworkService.swift */; };
@@ -68,6 +69,7 @@
 		F19AF4A329C26D46004DC562 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
 		F1DB8C2D29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
 		F1DB8C2F29D3880E00BDDB7F /* NewsFeedCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCodeCell.swift; sourceTree = "<group>"; };
+		F1DB8C3129D3AE1E00BDDB7F /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		F1F71AF229C49C220073F51C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F1F71AF529C49FBE0073F51C /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		F1F71AFF29C4D7E90073F51C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				F199BC1329CB959C003F4773 /* WebImageView.swift */,
 				F1871BC329CA253A00BD3D12 /* NewsFeedCell.swift */,
 				F1DB8C2F29D3880E00BDDB7F /* NewsFeedCodeCell.swift */,
+				F1DB8C3129D3AE1E00BDDB7F /* Constraints.swift */,
 				F1DB8C2D29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift */,
 				F1871BC529CA260000BD3D12 /* NewsFeedCell.xib */,
 			);
@@ -252,6 +255,7 @@
 				F1871BBB29C90B8D00BD3D12 /* NewsfeedRouter.swift in Sources */,
 				F1871BBA29C90B8D00BD3D12 /* NewsfeedWorker.swift in Sources */,
 				F1F71B0629C7EAFB0073F51C /* NetworkDataFetcher.swift in Sources */,
+				F1DB8C3229D3AE1E00BDDB7F /* Constraints.swift in Sources */,
 				F19AF49329C255E3004DC562 /* AuthViewController.swift in Sources */,
 				F1871BC429CA253A00BD3D12 /* NewsFeedCell.swift in Sources */,
 				F1871BBD29C90B8D00BD3D12 /* NewsfeedViewController.swift in Sources */,
