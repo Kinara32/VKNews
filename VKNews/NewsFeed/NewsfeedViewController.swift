@@ -74,12 +74,13 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedCell.reuseId, for: indexPath) as! NewsFeedCell
 //        cell.setUI(viewModel: feedViewModel.cellArr[indexPath.row])
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedCodeCell.reuseId, for: indexPath) as! NewsFeedCodeCell
+        cell.setUI(viewModel: feedViewModel.cellArr[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        feedViewModel.cellArr[indexPath.row].sizes.totalHeight
-        212
+        feedViewModel.cellArr[indexPath.row].sizes.totalHeight
+//        212
     }
     
 }

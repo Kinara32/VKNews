@@ -109,10 +109,10 @@
 			children = (
 				F199BC1329CB959C003F4773 /* WebImageView.swift */,
 				F1871BC329CA253A00BD3D12 /* NewsFeedCell.swift */,
+				F1871BC529CA260000BD3D12 /* NewsFeedCell.xib */,
 				F1DB8C2F29D3880E00BDDB7F /* NewsFeedCodeCell.swift */,
 				F1DB8C3129D3AE1E00BDDB7F /* Constraints.swift */,
 				F1DB8C2D29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift */,
-				F1871BC529CA260000BD3D12 /* NewsFeedCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
