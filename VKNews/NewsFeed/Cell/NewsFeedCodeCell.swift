@@ -15,7 +15,6 @@ final class NewsFeedCodeCell: UITableViewCell {
     // First layer
     let cardView: UIView = {
         let view = UIView()
-//        view.backgroundColor = .systemRed
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -24,12 +23,10 @@ final class NewsFeedCodeCell: UITableViewCell {
     let topView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return view
     }()
     let postLabel: UILabel = {
         let label = UILabel()
-//        label.backgroundColor = .purple
         label.numberOfLines = 0
         label.font = Constants.postLabelFont
         label.textColor = #colorLiteral(red: 0.2273307443, green: 0.2323131561, blue: 0.2370453477, alpha: 1)
@@ -37,13 +34,11 @@ final class NewsFeedCodeCell: UITableViewCell {
     }()
     let postImageView: WebImageView = {
         let imageView = WebImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = #colorLiteral(red: 0.9117177725, green: 0.918438971, blue: 0.927837193, alpha: 1)
         return imageView
     }()
     let bottomView: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .blue
         return view
     }()
@@ -52,7 +47,6 @@ final class NewsFeedCodeCell: UITableViewCell {
     let iconImageView: WebImageView = {
         let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.backgroundColor = .magenta
         return imageView
     }()
     let nameLabel: UILabel = {
@@ -61,7 +55,6 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         label.numberOfLines = 0
         label.textColor = #colorLiteral(red: 0.2273307443, green: 0.2323131561, blue: 0.2370453477, alpha: 1)
-//        label.backgroundColor = .blue
         return label
     }()
     let dateLabel: UILabel = {
@@ -69,7 +62,6 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = #colorLiteral(red: 0.5768454671, green: 0.6187268496, blue: 0.6644299626, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 12)
-//        label.backgroundColor = .orange
         return label
     }()
     
@@ -99,6 +91,60 @@ final class NewsFeedCodeCell: UITableViewCell {
         return view
     }()
     
+    // Fourth layer on bottomView
+    let likesImage: UIImageView = {
+        let image = UIImageView(image: UIImage(systemName: "heart"))
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    let commentsImage: UIImageView = {
+        let image = UIImageView(image: UIImage(systemName: "message"))
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    let repostsImage: UIImageView = {
+        let image = UIImageView(image: UIImage(systemName: "arrowshape.turn.up.right"))
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    let viewsImage: UIImageView = {
+        let image = UIImageView(image: UIImage(systemName: "eye.fill"))
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    let likesLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = #colorLiteral(red: 0.5768454671, green: 0.6187268496, blue: 0.6644299626, alpha: 1)
+        label.lineBreakMode = .byClipping
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        return label
+    }()
+    let commentsLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = #colorLiteral(red: 0.5768454671, green: 0.6187268496, blue: 0.6644299626, alpha: 1)
+        label.lineBreakMode = .byClipping
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        return label
+    }()
+    let repostsLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = #colorLiteral(red: 0.5768454671, green: 0.6187268496, blue: 0.6644299626, alpha: 1)
+        label.lineBreakMode = .byClipping
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        return label
+    }()
+    let viewsLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = #colorLiteral(red: 0.5768454671, green: 0.6187268496, blue: 0.6644299626, alpha: 1)
+        label.lineBreakMode = .byClipping
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -106,8 +152,8 @@ final class NewsFeedCodeCell: UITableViewCell {
         overlaySecondLayer()
         overlayThirdLayerTop()
         overlayThirdLayerBottom()
-//        contentView.backgroundColor = #colorLiteral(red: 0.476841867, green: 0.5048075914, blue: 1, alpha: 1)
-//        cardView.backgroundColor = .white
+        overlayFourthLayerBottom()
+
     }
     
     func setUI(viewModel: FeedCellViewModel) {
@@ -183,6 +229,50 @@ final class NewsFeedCodeCell: UITableViewCell {
         bottomView.addSubview(repostsView)
         bottomView.addSubview(viewsView)
         
+        // likesView constraints
+        likesView.heightAnchor.constraint(equalTo: bottomView.heightAnchor).isActive = true
+        likesView.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor).isActive = true
+        likesView.widthAnchor.constraint(equalToConstant: 46).isActive = true
         
+        // commentsView constraints
+        commentsView.heightAnchor.constraint(equalTo: bottomView.heightAnchor).isActive = true
+        commentsView.leadingAnchor.constraint(equalTo: likesView.trailingAnchor).isActive = true
+        commentsView.widthAnchor.constraint(equalToConstant: 46).isActive = true
+        
+        // repostsView constraints
+        repostsView.heightAnchor.constraint(equalTo: bottomView.heightAnchor).isActive = true
+        repostsView.leadingAnchor.constraint(equalTo: commentsView.trailingAnchor).isActive = true
+        repostsView.widthAnchor.constraint(equalToConstant: 46).isActive = true
+        
+        // viewsView constraints
+        viewsView.heightAnchor.constraint(equalTo: bottomView.heightAnchor).isActive = true
+        viewsView.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor).isActive = true
+        viewsView.widthAnchor.constraint(equalToConstant: 46).isActive = true
+    }
+    
+    func overlayFourthLayerBottom() {
+        likesView.addSubview(likesImage)
+        likesView.addSubview(likesLabel)
+        
+        commentsView.addSubview(commentsImage)
+        commentsView.addSubview(commentsLabel)
+        
+        repostsView.addSubview(repostsImage)
+        repostsView.addSubview(repostsLabel)
+        
+        viewsView.addSubview(viewsImage)
+        viewsView.addSubview(viewsLabel)
+        
+        
+    }
+    
+    func helpInFourthLayer(view: UIView, imageView: UIImageView, label: UILabel) {
+        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 8).isActive = true
+        
+        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 8).isActive = true
+        label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8).isActive = true
+        label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 8).isActive = true
     }
 }
