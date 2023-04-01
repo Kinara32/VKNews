@@ -49,14 +49,14 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
         let dateTitle = dateFormatter.string(from: date)
         let photoAttachment = photoAttachment(feedItem: feedItem)
         
-        let sizes = cellLayoutCalculator?.sizes(postText: feedItem.text, photoAttachment: photoAttachment) ?? Sizes(postLabelFrame: .zero, attachmentFrame: .zero, bottomViewFrame: .zero, totalHeight: 300)
+        let sizes = cellLayoutCalculator?.sizes(postText: feedItem.text, photoAttachment: photoAttachment) ?? Sizes(postLabelFrame: .zero, moreTextButtonFrame: .zero, attachmentFrame: .zero, bottomViewFrame: .zero, totalHeight: 300)
         
         return FeedViewModel.Cell(iconUrlString: profile?.photo ?? "",
                                   name: profile?.name ?? "",
                                   date: dateTitle,
                                   post: feedItem.text,
-                                  likes: String(feedItem.views?.count ?? 0),
-                                  comments: String(feedItem.views?.count ?? 0),
+                                  likes: String(feedItem.likes?.count ?? 0),
+                                  comments: String(feedItem.comments?.count ?? 0),
                                   shares: String(feedItem.reposts?.count ?? 0),
                                   views: String(feedItem.views?.count ?? 0),
                                   photoAttachment: photoAttachment,

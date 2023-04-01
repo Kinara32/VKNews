@@ -35,14 +35,21 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.textColor = #colorLiteral(red: 0.2273307443, green: 0.2323131561, blue: 0.2370453477, alpha: 1)
         return label
     }()
+    let moreTextButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        button.setTitleColor(#colorLiteral(red: 0.4691888094, green: 0.6887934804, blue: 0.8642576933, alpha: 1), for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.contentVerticalAlignment = .center
+        button.setTitle("Показать полностью...", for: .normal)
+        return button
+    }()
     let postImageView: WebImageView = {
         let imageView = WebImageView()
-        imageView.backgroundColor = #colorLiteral(red: 0.9117177725, green: 0.918438971, blue: 0.927837193, alpha: 1)
         return imageView
     }()
     let bottomView: UIView = {
         let view = UIView()
-//        view.backgroundColor = .blue
         return view
     }()
     
@@ -50,6 +57,8 @@ final class NewsFeedCodeCell: UITableViewCell {
     let iconImageView: WebImageView = {
         let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 36 / 2
+        imageView.clipsToBounds = true
         return imageView
     }()
     let nameLabel: UILabel = {
@@ -176,6 +185,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         postLabel.frame = viewModel.sizes.postLabelFrame
         postImageView.frame = viewModel.sizes.attachmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
+        moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
         
         if let photoAttachment = viewModel.photoAttachment {
             postImageView.setIcon(photoAttachment.photoURL)
@@ -194,10 +204,12 @@ final class NewsFeedCodeCell: UITableViewCell {
         addSubview(cardView)
         cardView.fillSuperview(padding: UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16))
     }
+    
     // Second layer
     private func overlaySecondLayer() {
         cardView.addSubview(topView)
         cardView.addSubview(postLabel)
+        cardView.addSubview(moreTextButton)
         cardView.addSubview(postImageView)
         cardView.addSubview(bottomView)
         
@@ -206,8 +218,10 @@ final class NewsFeedCodeCell: UITableViewCell {
         topView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8).isActive = true
         topView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 8).isActive = true
         topView.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        
     }
     
+    // Third top layer
     private func overlayThirdLayerTop() {
         topView.addSubview(iconImageView)
         topView.addSubview(nameLabel)
@@ -232,6 +246,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         dateLabel.heightAnchor.constraint(equalTo: topView.heightAnchor, multiplier: 1/2).isActive = true
     }
     
+    // Third bottom layer
     private func overlayThirdLayerBottom() {
         bottomView.addSubview(likesView)
         bottomView.addSubview(commentsView)
@@ -259,6 +274,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         viewsView.widthAnchor.constraint(equalToConstant: 78).isActive = true
     }
     
+    // Fourth bottom layer
     func overlayFourthLayerBottom() {
         likesView.addSubview(likesImage)
         likesView.addSubview(likesLabel)
@@ -274,7 +290,14 @@ final class NewsFeedCodeCell: UITableViewCell {
         
         viewsView.addSubview(viewsImage)
         viewsView.addSubview(viewsLabel)
-        helpInFourthLayer(view: viewsView, imageView: viewsImage, label: viewsLabel)
+        viewsImage.centerYAnchor.constraint(equalTo: viewsView.centerYAnchor).isActive = true
+        viewsImage.leadingAnchor.constraint(equalTo: viewsView.leadingAnchor, constant: 8).isActive = true
+        viewsImage.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        viewsImage.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        
+        viewsLabel.centerYAnchor.constraint(equalTo: viewsView.centerYAnchor).isActive = true
+        viewsLabel.leadingAnchor.constraint(equalTo: viewsImage.trailingAnchor, constant: 4).isActive = true
+        viewsLabel.trailingAnchor.constraint(equalTo: viewsView.trailingAnchor).isActive = true
         
     }
     

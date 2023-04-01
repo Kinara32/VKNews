@@ -24,6 +24,7 @@ protocol FeedCellViewModel {
 
 protocol FeedCellSizes {
     var postLabelFrame: CGRect { get }
+    var moreTextButtonFrame: CGRect { get }
     var attachmentFrame: CGRect { get }
     var bottomViewFrame: CGRect { get }
     var totalHeight: CGFloat { get }

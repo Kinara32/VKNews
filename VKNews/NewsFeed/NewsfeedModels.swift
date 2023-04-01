@@ -35,7 +35,6 @@ struct FeedViewModel {
     let cellArr: [Cell]
     
     struct Cell: FeedCellViewModel {
-        
         var iconUrlString: String
         var name: String
         var date: String
