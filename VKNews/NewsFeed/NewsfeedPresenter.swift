@@ -32,26 +32,31 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
     func presentData(response: Newsfeed.Model.Response.ResponseType) {
         
         switch response {
-            case .presentNewsFeed(feed: let feed):
+            case .presentNewsFeed(feed: let feed, revealdedPostIds: let revealdedPostIds):
+                print(revealdedPostIds)
                 let cellArr = feed.items.map { feedItem in
-                    cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups)
+                    cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups, revealdedPostIds: revealdedPostIds)
                 }
                 let feedViewModel = FeedViewModel(cellArr: cellArr)
                 viewController?.displayData(viewModel: .displayNewsFeed(feedViewModel: feedViewModel))
         }
     }
     
-    private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group]) -> FeedViewModel.Cell {
+    private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group], revealdedPostIds: [Int]) -> FeedViewModel.Cell {
         
         let profile = profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
         
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)
         let photoAttachment = photoAttachment(feedItem: feedItem)
+        let isFullSized = revealdedPostIds.contains { $0 == feedItem.postId }
         
-        let sizes = cellLayoutCalculator?.sizes(postText: feedItem.text, photoAttachment: photoAttachment) ?? Sizes(postLabelFrame: .zero, moreTextButtonFrame: .zero, attachmentFrame: .zero, bottomViewFrame: .zero, totalHeight: 300)
+        let sizes = cellLayoutCalculator?.sizes(postText: feedItem.text, photoAttachment: photoAttachment, isFullSizedPost: isFullSized) ?? Sizes(postLabelFrame: .zero, moreTextButtonFrame: .zero, attachmentFrame: .zero, bottomViewFrame: .zero, totalHeight: 300)
         
-        return FeedViewModel.Cell(iconUrlString: profile?.photo ?? "",
+        
+        
+        return FeedViewModel.Cell(postId: feedItem.postId,
+                                  iconUrlString: profile?.photo ?? "",
                                   name: profile?.name ?? "",
                                   date: dateTitle,
                                   post: feedItem.text,

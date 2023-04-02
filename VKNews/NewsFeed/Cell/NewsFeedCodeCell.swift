@@ -8,9 +8,14 @@
 import Foundation
 import UIKit
 
+protocol CodeCellDelegate: AnyObject {
+    func revealPost(for cell: NewsFeedCodeCell)
+}
+
 final class NewsFeedCodeCell: UITableViewCell {
     
     static let reuseId = "NewsFeedCodeCell"
+    weak var delegate: CodeCellDelegate?
     
     // First layer
     let cardView: UIView = {
@@ -161,7 +166,8 @@ final class NewsFeedCodeCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         selectionStyle = .none
-        backgroundColor = #colorLiteral(red: 0.476841867, green: 0.5048075914, blue: 1, alpha: 1)
+        contentView.backgroundColor = #colorLiteral(red: 0.476841867, green: 0.5048075914, blue: 1, alpha: 1)
+        moreTextButton.addTarget(self, action: #selector(moreTextButtonTouch(sender:)), for: .touchUpInside)
         
         overlayFirstLayer()
         overlaySecondLayer()
@@ -199,9 +205,13 @@ final class NewsFeedCodeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func moreTextButtonTouch(sender: UIButton) {
+        delegate?.revealPost(for: self)
+    }
+    
     // First layer
     private func overlayFirstLayer() {
-        addSubview(cardView)
+        contentView.addSubview(cardView)
         cardView.fillSuperview(padding: UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16))
     }
     
