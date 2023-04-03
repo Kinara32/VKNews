@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F12F44E029DB21AE002B5A40 /* GalleryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F44DF29DB21AD002B5A40 /* GalleryCollectionView.swift */; };
 		F12F44E229DB2293002B5A40 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F44E129DB2293002B5A40 /* GalleryCollectionViewCell.swift */; };
+		F12F44E429DB714C002B5A40 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F44E329DB714C002B5A40 /* RowLayout.swift */; };
 		F1871BB929C90B8D00BD3D12 /* NewsfeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB229C90B8D00BD3D12 /* NewsfeedPresenter.swift */; };
 		F1871BBA29C90B8D00BD3D12 /* NewsfeedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB329C90B8D00BD3D12 /* NewsfeedWorker.swift */; };
 		F1871BBB29C90B8D00BD3D12 /* NewsfeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1871BB429C90B8D00BD3D12 /* NewsfeedRouter.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		F12F44DF29DB21AD002B5A40 /* GalleryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionView.swift; sourceTree = "<group>"; };
 		F12F44E129DB2293002B5A40 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		F12F44E329DB714C002B5A40 /* RowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLayout.swift; sourceTree = "<group>"; };
 		F1871BB229C90B8D00BD3D12 /* NewsfeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedPresenter.swift; sourceTree = "<group>"; };
 		F1871BB329C90B8D00BD3D12 /* NewsfeedWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedWorker.swift; sourceTree = "<group>"; };
 		F1871BB429C90B8D00BD3D12 /* NewsfeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedRouter.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				F12F44DF29DB21AD002B5A40 /* GalleryCollectionView.swift */,
+				F12F44E329DB714C002B5A40 /* RowLayout.swift */,
 				F12F44E129DB2293002B5A40 /* GalleryCollectionViewCell.swift */,
 			);
 			path = GalleryView;
@@ -105,8 +108,6 @@
 		F1871BB129C90B4E00BD3D12 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				F12F44DE29DB218B002B5A40 /* GalleryView */,
-				F1871BC229CA251B00BD3D12 /* Cell */,
 				F1871BB629C90B8D00BD3D12 /* NewsfeedViewController.swift */,
 				F1871BC029CA1AF100BD3D12 /* NewsfeedViewController.storyboard */,
 				F1871BB729C90B8D00BD3D12 /* NewsfeedInteractor.swift */,
@@ -114,6 +115,8 @@
 				F1871BB529C90B8D00BD3D12 /* NewsfeedModels.swift */,
 				F1871BB329C90B8D00BD3D12 /* NewsfeedWorker.swift */,
 				F1871BB429C90B8D00BD3D12 /* NewsfeedRouter.swift */,
+				F12F44DE29DB218B002B5A40 /* GalleryView */,
+				F1871BC229CA251B00BD3D12 /* Cell */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				F1871BBA29C90B8D00BD3D12 /* NewsfeedWorker.swift in Sources */,
 				F1F71B0629C7EAFB0073F51C /* NetworkDataFetcher.swift in Sources */,
 				F1DB8C3229D3AE1E00BDDB7F /* Constraints.swift in Sources */,
+				F12F44E429DB714C002B5A40 /* RowLayout.swift in Sources */,
 				F19AF49329C255E3004DC562 /* AuthViewController.swift in Sources */,
 				F1871BC429CA253A00BD3D12 /* NewsFeedCell.swift in Sources */,
 				F1871BBD29C90B8D00BD3D12 /* NewsfeedViewController.swift in Sources */,

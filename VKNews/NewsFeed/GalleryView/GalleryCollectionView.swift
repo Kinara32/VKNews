@@ -8,14 +8,15 @@
 import Foundation
 import UIKit
 
-class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
+class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var photos = [FeedCellPhotoAttachmentViewModel]()
     
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        super.init(frame: .zero, collectionViewLayout: layout)
+        let rowLayout = RowLayout()
+        super.init(frame: .zero, collectionViewLayout: rowLayout)
         delegate = self
         dataSource = self
         backgroundColor = .orange
@@ -39,5 +40,9 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
         let cell = dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.reuseId, for: indexPath) as! GalleryCollectionViewCell
         cell.set(imageURL: photos[indexPath.row].photoURL)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: frame.width, height: frame.height)
     }
 }
