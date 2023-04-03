@@ -18,7 +18,7 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
     
     var cellLayoutCalculator: FeedCellLayoutCalculatorProtocol? = {
         guard let width = SceneDelegate.shared().window?.windowScene?.screen.bounds.width,
-                let height = SceneDelegate.shared().window?.windowScene?.screen.bounds.height else {return nil}
+              let height = SceneDelegate.shared().window?.windowScene?.screen.bounds.height else {return nil}
         return FeedCellLayoutCalculator(screenWidth: min(width, height))
     }()
     
@@ -48,10 +48,10 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
         
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)
-        let photoAttachment = photoAttachment(feedItem: feedItem)
+        let photoAttachments = photoAttachments(feedItem: feedItem)
         let isFullSized = revealdedPostIds.contains { $0 == feedItem.postId }
         
-        let sizes = cellLayoutCalculator?.sizes(postText: feedItem.text, photoAttachment: photoAttachment, isFullSizedPost: isFullSized) ?? Sizes(postLabelFrame: .zero, moreTextButtonFrame: .zero, attachmentFrame: .zero, bottomViewFrame: .zero, totalHeight: 300)
+        let sizes = cellLayoutCalculator?.sizes(postText: feedItem.text, photoAttachments: photoAttachments, isFullSizedPost: isFullSized) ?? Sizes(postLabelFrame: .zero, moreTextButtonFrame: .zero, attachmentFrame: .zero, bottomViewFrame: .zero, totalHeight: 300)
         
         
         
@@ -64,7 +64,7 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
                                   comments: String(feedItem.comments?.count ?? 0),
                                   shares: String(feedItem.reposts?.count ?? 0),
                                   views: String(feedItem.views?.count ?? 0),
-                                  photoAttachment: photoAttachment,
+                                  photoAttachments: photoAttachments,
                                   sizes: sizes)
         
     }
@@ -75,8 +75,15 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
     }
     
     private func photoAttachment(feedItem: FeedItem) -> FeedViewModel.FeedCellPhotoAttachment? {
-        guard let photos = feedItem.attachments?.compactMap({ $0.photo }), let firstPhoto = photos.first else {return nil}
+        guard let photos = feedItem.attachments?.compactMap({ $0.photo }), let firstPhoto = photos.first else { return nil }
         
         return FeedViewModel.FeedCellPhotoAttachment(photoURL: firstPhoto.srcBIG, width: firstPhoto.width, height: firstPhoto.height)
+    }
+    private func photoAttachments(feedItem: FeedItem) -> [FeedViewModel.FeedCellPhotoAttachment] {
+        guard let attachments = feedItem.attachments else { return [] }
+        return attachments.compactMap { (attachment) -> FeedViewModel.FeedCellPhotoAttachment? in
+            guard let photo = attachment.photo else { return nil }
+            return FeedViewModel.FeedCellPhotoAttachment(photoURL: photo.srcBIG, width: photo.width, height: photo.height)
+        }
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 protocol FeedCellViewModel {
     
     var iconUrlString: String { get }
-    var photoAttachment: FeedCellPhotoAttachmentViewModel? { get }
+    var photoAttachments: [FeedCellPhotoAttachmentViewModel] { get }
     var name: String { get }
     var date: String { get }
     var post: String? { get }
@@ -77,11 +77,11 @@ class NewsFeedCell: UITableViewCell {
         postImageView.frame = viewModel.sizes.attachmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
         
-        if let photoAttachment = viewModel.photoAttachment {
-            postImageView.setIcon(photoAttachment.photoURL)
-            postImageView.isHidden = false
-        } else {
-            postImageView.isHidden = true
-        }
+//        if let photoAttachment = viewModel.photoAttachment {
+//            postImageView.setIcon(photoAttachment.photoURL)
+//            postImageView.isHidden = false
+//        } else {
+//            postImageView.isHidden = true
+//        }
     }
 }

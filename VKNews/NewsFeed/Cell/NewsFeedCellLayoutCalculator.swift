@@ -30,7 +30,7 @@ struct Constants {
 }
 
 protocol FeedCellLayoutCalculatorProtocol {
-    func sizes(postText: String?, photoAttachment: FeedCellPhotoAttachmentViewModel?, isFullSizedPost: Bool) -> FeedCellSizes
+    func sizes(postText: String?, photoAttachments: [FeedCellPhotoAttachmentViewModel], isFullSizedPost: Bool) -> FeedCellSizes
 }
 
 final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
@@ -40,7 +40,7 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
         self.screenWidth = screenWidth
     }
     
-    func sizes(postText: String?, photoAttachment: FeedCellPhotoAttachmentViewModel?, isFullSizedPost: Bool) -> FeedCellSizes {
+    func sizes(postText: String?, photoAttachments: [FeedCellPhotoAttachmentViewModel], isFullSizedPost: Bool) -> FeedCellSizes {
         
         var showMoreTextButton = false
         // MARK: Работа с postLabelFrame
@@ -72,11 +72,11 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
         let attachmentTop = postLabelFrame.size == CGSize.zero ? Constants.postLabelInsets.top : moreTextButtonFrame.maxY + Constants.postLabelInsets.bottom
         var attachmentFrame = CGRect(x: 0, y: attachmentTop, width: .zero, height: .zero)
         
-        if let attachment = photoAttachment {
+        if let attachment = photoAttachments.first {
             let ratio = CGFloat(attachment.height) / Double(attachment.width)
             attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
         }
-        
+
         // MARK: Работа с bottomViewFrame
         let bottomViewTop = max(postLabelFrame.maxY, attachmentFrame.maxY)
         let bottomViewFrame = CGRect(x: 0, y: bottomViewTop, width: cardViewWidth, height: Constants.bottomViewHeight)
