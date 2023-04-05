@@ -74,7 +74,18 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
         
         if let attachment = photoAttachments.first {
             let ratio = CGFloat(attachment.height) / Double(attachment.width)
-            attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+            if photoAttachments.count == 1 {
+                attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+            } else if photoAttachments.count > 1 {
+                var photos = [CGSize]()
+                for photo in photoAttachments {
+                    let photoSize = CGSize(width: CGFloat(photo.width), height: CGFloat(photo.height))
+                    photos.append(photoSize)
+                }
+                if let rowHeight = RowLayout.rowHeightCounter(superviewWidth: cardViewWidth, photoArray: photos) {
+                    attachmentFrame.size = CGSize(width: cardViewWidth, height: rowHeight)
+                }
+            }
         }
 
         // MARK: Работа с bottomViewFrame
