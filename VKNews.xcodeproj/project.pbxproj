@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10F9F9E29DF3FAF0034A35A /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F9F9D29DF3FAF0034A35A /* TitleView.swift */; };
+		F10F9FA029DF408B0034A35A /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F9F9F29DF408B0034A35A /* InsetableTextField.swift */; };
 		F12F44E029DB21AE002B5A40 /* GalleryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F44DF29DB21AD002B5A40 /* GalleryCollectionView.swift */; };
 		F12F44E229DB2293002B5A40 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F44E129DB2293002B5A40 /* GalleryCollectionViewCell.swift */; };
 		F12F44E429DB714C002B5A40 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F44E329DB714C002B5A40 /* RowLayout.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F10F9F9D29DF3FAF0034A35A /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		F10F9F9F29DF408B0034A35A /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
 		F12F44DF29DB21AD002B5A40 /* GalleryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionView.swift; sourceTree = "<group>"; };
 		F12F44E129DB2293002B5A40 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F12F44E329DB714C002B5A40 /* RowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLayout.swift; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F10F9F9C29DF3F920034A35A /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				F10F9F9D29DF3FAF0034A35A /* TitleView.swift */,
+				F10F9F9F29DF408B0034A35A /* InsetableTextField.swift */,
+			);
+			path = TitleView;
+			sourceTree = "<group>";
+		};
 		F12F44DE29DB218B002B5A40 /* GalleryView */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +121,7 @@
 		F1871BB129C90B4E00BD3D12 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				F10F9F9C29DF3F920034A35A /* TitleView */,
 				F1871BB629C90B8D00BD3D12 /* NewsfeedViewController.swift */,
 				F1871BC029CA1AF100BD3D12 /* NewsfeedViewController.storyboard */,
 				F1871BB729C90B8D00BD3D12 /* NewsfeedInteractor.swift */,
@@ -276,6 +290,7 @@
 				F1DB8C3229D3AE1E00BDDB7F /* Constraints.swift in Sources */,
 				F12F44E429DB714C002B5A40 /* RowLayout.swift in Sources */,
 				F19AF49329C255E3004DC562 /* AuthViewController.swift in Sources */,
+				F10F9FA029DF408B0034A35A /* InsetableTextField.swift in Sources */,
 				F1871BC429CA253A00BD3D12 /* NewsFeedCell.swift in Sources */,
 				F1871BBD29C90B8D00BD3D12 /* NewsfeedViewController.swift in Sources */,
 				F1F71B0429C7E7120073F51C /* FeedResponse.swift in Sources */,
@@ -287,6 +302,7 @@
 				F1F71B0029C4D7E90073F51C /* NetworkService.swift in Sources */,
 				F1F71AF329C49C220073F51C /* AuthService.swift in Sources */,
 				F199BC1429CB959C003F4773 /* WebImageView.swift in Sources */,
+				F10F9F9E29DF3FAF0034A35A /* TitleView.swift in Sources */,
 				F1DB8C2E29CF6FA200BDDB7F /* NewsFeedCellLayoutCalculator.swift in Sources */,
 				F1871BBE29C90B8D00BD3D12 /* NewsfeedInteractor.swift in Sources */,
 			);
