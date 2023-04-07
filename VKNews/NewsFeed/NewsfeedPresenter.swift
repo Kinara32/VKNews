@@ -33,13 +33,18 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
         
         switch response {
             case .presentNewsFeed(feed: let feed, revealdedPostIds: let revealdedPostIds):
-                print(revealdedPostIds)
                 let cellArr = feed.items.map { feedItem in
                     cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups, revealdedPostIds: revealdedPostIds)
                 }
                 let feedViewModel = FeedViewModel(cellArr: cellArr)
+                
                 viewController?.displayData(viewModel: .displayNewsFeed(feedViewModel: feedViewModel))
+                
+            case .presentUserInfo(user: let user):
+                let userViewModel = UserViewModel(photoUrlString: user?.photo100)
+                viewController?.displayData(viewModel: .displayUser(userViewModel: userViewModel))
         }
+        
     }
     
     private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group], revealdedPostIds: [Int]) -> FeedViewModel.Cell {

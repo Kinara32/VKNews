@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol TitleViewViewModel {
+    var photoUrlString: String? { get }
+}
+
 class TitleView: UIView {
     
     private var textField = InsetableTextField()
@@ -27,7 +31,11 @@ class TitleView: UIView {
         addSubview(avatarView)
         makeConstraints()
     }
-     
+    
+    func set(userViewModel: TitleViewViewModel) {
+        avatarView.setIcon(userViewModel.photoUrlString)
+    }
+    
     private func makeConstraints() {
         avatarView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 4).isActive = true
         avatarView.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true

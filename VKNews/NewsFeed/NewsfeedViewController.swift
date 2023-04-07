@@ -47,12 +47,13 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic, CodeCellDe
         super.viewDidLoad()
         setup()
         setupTopBars()
+        
         tableView.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
         tableView.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
-        interactor?.makeRequest(request: .getNewsFeed)
-        
         tableView.separatorStyle = .none
         
+        interactor?.makeRequest(request: .getNewsFeed)
+        interactor?.makeRequest(request: .getUser)
     }
     
     private func setupTopBars() {
@@ -67,7 +68,11 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic, CodeCellDe
             case .displayNewsFeed(feedViewModel: let feedViewModel):
                 self.feedViewModel = feedViewModel
                 tableView.reloadData()
+                
+            case .displayUser(userViewModel: let userViewModel):
+                titleView.set(userViewModel: userViewModel)
         }
+        
     }
     
     // MARK: Cell delegate

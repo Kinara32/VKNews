@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F10F9F9E29DF3FAF0034A35A /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F9F9D29DF3FAF0034A35A /* TitleView.swift */; };
 		F10F9FA029DF408B0034A35A /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F9F9F29DF408B0034A35A /* InsetableTextField.swift */; };
+		F10F9FA229E0656D0034A35A /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F9FA129E0656D0034A35A /* UserResponse.swift */; };
 		F12F44E029DB21AE002B5A40 /* GalleryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F44DF29DB21AD002B5A40 /* GalleryCollectionView.swift */; };
 		F12F44E229DB2293002B5A40 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F44E129DB2293002B5A40 /* GalleryCollectionViewCell.swift */; };
 		F12F44E429DB714C002B5A40 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F44E329DB714C002B5A40 /* RowLayout.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		F10F9F9D29DF3FAF0034A35A /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		F10F9F9F29DF408B0034A35A /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
+		F10F9FA129E0656D0034A35A /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		F12F44DF29DB21AD002B5A40 /* GalleryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionView.swift; sourceTree = "<group>"; };
 		F12F44E129DB2293002B5A40 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F12F44E329DB714C002B5A40 /* RowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLayout.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				F1F71AF229C49C220073F51C /* AuthService.swift */,
 				F1F71AFF29C4D7E90073F51C /* NetworkService.swift */,
 				F1F71B0329C7E7120073F51C /* FeedResponse.swift */,
+				F10F9FA129E0656D0034A35A /* UserResponse.swift */,
 				F1F71B0529C7EAFB0073F51C /* NetworkDataFetcher.swift */,
 			);
 			path = Services;
@@ -293,6 +296,7 @@
 				F10F9FA029DF408B0034A35A /* InsetableTextField.swift in Sources */,
 				F1871BC429CA253A00BD3D12 /* NewsFeedCell.swift in Sources */,
 				F1871BBD29C90B8D00BD3D12 /* NewsfeedViewController.swift in Sources */,
+				F10F9FA229E0656D0034A35A /* UserResponse.swift in Sources */,
 				F1F71B0429C7E7120073F51C /* FeedResponse.swift in Sources */,
 				F1871BB929C90B8D00BD3D12 /* NewsfeedPresenter.swift in Sources */,
 				F19AF48F29C255E3004DC562 /* AppDelegate.swift in Sources */,

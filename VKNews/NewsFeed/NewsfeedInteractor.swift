@@ -19,6 +19,7 @@ class NewsfeedInteractor: NewsfeedBusinessLogic {
     private let networkDataFetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
     private var revealedPostId = [Int]()
     private var feedResponse: FeedResponse?
+    private var userResponse: UserResponse?
     
     func makeRequest(request: Newsfeed.Model.Request.RequestType) {
         if service == nil {
@@ -26,7 +27,6 @@ class NewsfeedInteractor: NewsfeedBusinessLogic {
         }
         switch request {
             case .getNewsFeed:
-                print(".getFeed Interactor")
                 
                 networkDataFetcher.getFeed { [weak self] (feedResponse) in
                     self?.feedResponse = feedResponse
@@ -35,6 +35,12 @@ class NewsfeedInteractor: NewsfeedBusinessLogic {
             case .revealPostId(postId: let postId):
                 revealedPostId.append(postId)
                 presentFeed()
+                
+            case .getUser:
+                networkDataFetcher.getUser { [weak self] (userResponse) in
+                    self?.userResponse = userResponse
+                    self?.presenter?.presentData(response: .presentUserInfo(user: userResponse))
+                }
         }
     }
     
