@@ -58,20 +58,31 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
         
         let sizes = cellLayoutCalculator?.sizes(postText: feedItem.text, photoAttachments: photoAttachments, isFullSizedPost: isFullSized) ?? Sizes(postLabelFrame: .zero, moreTextButtonFrame: .zero, attachmentFrame: .zero, bottomViewFrame: .zero, totalHeight: 300)
         
-        
+        let postText = feedItem.text?.replacingOccurrences(of: "<br>", with: "\n")
         
         return FeedViewModel.Cell(postId: feedItem.postId,
                                   iconUrlString: profile?.photo ?? "",
                                   name: profile?.name ?? "",
                                   date: dateTitle,
-                                  post: feedItem.text,
-                                  likes: String(feedItem.likes?.count ?? 0),
-                                  comments: String(feedItem.comments?.count ?? 0),
-                                  shares: String(feedItem.reposts?.count ?? 0),
-                                  views: String(feedItem.views?.count ?? 0),
+                                  post: postText,
+                                  likes: formattedCounter(feedItem.likes?.count),
+                                  comments: formattedCounter(feedItem.comments?.count),
+                                  shares: formattedCounter(feedItem.reposts?.count),
+                                  views: formattedCounter(feedItem.views?.count),
                                   photoAttachments: photoAttachments,
                                   sizes: sizes)
         
+    }
+    
+    private func formattedCounter(_ counter: Int?) -> String? {
+        guard let counter = counter, counter > 0 else { return nil }
+        var counterString = String(counter)
+        if  4...6 ~= counterString.count {
+            counterString = String(counterString.dropLast(3)) + "K"
+        } else if counterString.count > 6 {
+            counterString = String(counterString.dropLast(6)) + "M"
+        }
+        return counterString
     }
     
     private func profile(for sourseId: Int, profiles: [Profile], groups: [Group]) -> ProfileRepresenatable? {

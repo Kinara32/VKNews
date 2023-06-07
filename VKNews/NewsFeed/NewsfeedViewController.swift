@@ -22,6 +22,11 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic, CodeCellDe
     @IBOutlet weak var tableView: UITableView!
     
     private var titleView = TitleView()
+    private var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshControl
+    }()
     
     // MARK: Setup
     
@@ -47,13 +52,17 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic, CodeCellDe
         super.viewDidLoad()
         setup()
         setupTopBars()
-        
+        setupTable()
+        interactor?.makeRequest(request: .getNewsFeed)
+        interactor?.makeRequest(request: .getUser)
+    }
+    
+    private func setupTable() {
+        tableView.contentInset.top = 8
         tableView.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
         tableView.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
         tableView.separatorStyle = .none
-        
-        interactor?.makeRequest(request: .getNewsFeed)
-        interactor?.makeRequest(request: .getUser)
+        tableView.addSubview(refreshControl)
     }
     
     private func setupTopBars() {
@@ -62,13 +71,17 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic, CodeCellDe
         navigationItem.titleView = titleView
     }
     
+    @objc private func refresh() {
+        interactor?.makeRequest(request: .getNewsFeed)
+    }
+    
     func displayData(viewModel: Newsfeed.Model.ViewModel.ViewModelData) {
         
         switch viewModel {
             case .displayNewsFeed(feedViewModel: let feedViewModel):
                 self.feedViewModel = feedViewModel
                 tableView.reloadData()
-                
+                refreshControl.endRefreshing()
             case .displayUser(userViewModel: let userViewModel):
                 titleView.set(userViewModel: userViewModel)
         }
