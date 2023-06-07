@@ -36,17 +36,19 @@ struct Attachment: Decodable {
 struct Photo: Decodable {
     let id: Int
     let sizes: [PhotoSizes]
-    
+
     var height: Int {
-        return getPropperSize().height
+        getPropperSize().height
     }
+
     var width: Int {
-        return getPropperSize().width
+        getPropperSize().width
     }
+
     var srcBIG: String {
-        return getPropperSize().url
+        getPropperSize().url
     }
-    
+
     private func getPropperSize() -> PhotoSizes {
         if let sizeX = sizes.first(where: { $0.type == "x" }) {
             return sizeX
@@ -56,7 +58,6 @@ struct Photo: Decodable {
             return PhotoSizes(type: "wrong image", url: "wrong image", width: 0, height: 0)
         }
     }
-    
 }
 
 struct PhotoSizes: Decodable {
@@ -77,25 +78,24 @@ protocol ProfileRepresenatable {
 }
 
 struct Profile: Decodable, ProfileRepresenatable {
-    
     let id: Int
     let firstName: String
     let lastName: String
     let photo100: String
     var photo: String {
-        return photo100
+        photo100
     }
+
     var name: String {
-        return firstName + " " + lastName
+        firstName + " " + lastName
     }
 }
 
 struct Group: Decodable, ProfileRepresenatable {
-    
     let id: Int
     let name: String
     let photo100: String
     var photo: String {
-        return photo100
+        photo100
     }
 }

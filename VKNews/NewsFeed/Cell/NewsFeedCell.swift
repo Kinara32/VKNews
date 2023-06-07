@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 protocol FeedCellViewModel {
-    
     var iconUrlString: String { get }
     var photoAttachments: [FeedCellPhotoAttachmentViewModel] { get }
     var name: String { get }
@@ -37,32 +36,30 @@ protocol FeedCellPhotoAttachmentViewModel {
 }
 
 class NewsFeedCell: UITableViewCell {
-    
     static let reuseId = "NewsFeedCell"
-    
-    @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var iconImageView: WebImageView!
-    @IBOutlet weak var postImageView: WebImageView!
-    @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var postLabel: UILabel!
-    @IBOutlet weak var likesLabel: UILabel!
-    @IBOutlet weak var commentsLabel: UILabel!
-    @IBOutlet weak var shareLabel: UILabel!
-    @IBOutlet weak var viewsLabel: UILabel!
-    
-    
+
+    @IBOutlet var cardView: UIView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var iconImageView: WebImageView!
+    @IBOutlet var postImageView: WebImageView!
+    @IBOutlet var bottomView: UIView!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var postLabel: UILabel!
+    @IBOutlet var likesLabel: UILabel!
+    @IBOutlet var commentsLabel: UILabel!
+    @IBOutlet var shareLabel: UILabel!
+    @IBOutlet var viewsLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         iconImageView.layer.cornerRadius = iconImageView.frame.width / 2
         iconImageView.clipsToBounds = true
-        
+
         cardView.layer.cornerRadius = 10
         cardView.clipsToBounds = true
         selectionStyle = .none
     }
-    
+
     func setUI(viewModel: FeedCellViewModel) {
         iconImageView.setIcon(viewModel.iconUrlString)
         nameLabel.text = viewModel.name
@@ -72,11 +69,11 @@ class NewsFeedCell: UITableViewCell {
         commentsLabel.text = viewModel.comments
         shareLabel.text = viewModel.shares
         viewsLabel.text = viewModel.views
-        
+
         postLabel.frame = viewModel.sizes.postLabelFrame
         postImageView.frame = viewModel.sizes.attachmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
-        
+
 //        if let photoAttachment = viewModel.photoAttachment {
 //            postImageView.setIcon(photoAttachment.photoURL)
 //            postImageView.isHidden = false

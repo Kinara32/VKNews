@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 struct Sizes: FeedCellSizes {
-    
     var postLabelFrame: CGRect
     var moreTextButtonFrame: CGRect
     var attachmentFrame: CGRect
@@ -17,7 +16,7 @@ struct Sizes: FeedCellSizes {
     var totalHeight: CGFloat
 }
 
-struct Constants {
+enum Constants {
     static let cardInsets = UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16)
     static let topViewHeight: CGFloat = 36
     static let postLabelInsets = UIEdgeInsets(top: 8 + topViewHeight + 8, left: 8, bottom: 8, right: 8)
@@ -34,44 +33,46 @@ protocol FeedCellLayoutCalculatorProtocol {
 }
 
 final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
-    
     private let screenWidth: CGFloat
     init(screenWidth: CGFloat) {
         self.screenWidth = screenWidth
     }
-    
+
     func sizes(postText: String?, photoAttachments: [FeedCellPhotoAttachmentViewModel], isFullSizedPost: Bool) -> FeedCellSizes {
-        
         var showMoreTextButton = false
+
         // MARK: Работа с postLabelFrame
+
         let cardViewWidth = screenWidth - Constants.cardInsets.left - Constants.cardInsets.right
-        
+
         var postLabelFrame = CGRect(x: Constants.postLabelInsets.left, y: Constants.postLabelInsets.top, width: .zero, height: .zero)
-        
+
         if let text = postText, !text.isEmpty {
             let width = cardViewWidth - Constants.postLabelInsets.left - Constants.postLabelInsets.right
             var height = text.height(width: width, font: Constants.postLabelFont)
-            
+
             let limitHeight = Constants.postLabelFont.lineHeight * Constants.minifiedPostLimitLines
-            if !isFullSizedPost && height > limitHeight {
+            if !isFullSizedPost, height > limitHeight {
                 height = Constants.postLabelFont.lineHeight * Constants.minifiedPostLines
                 showMoreTextButton = true
             }
             postLabelFrame.size = CGSize(width: width, height: height)
         }
-        
+
         // MARK: Работа с moreTextButtonFrame
+
         var moreTextButtonSize = CGSize.zero
         if showMoreTextButton {
             moreTextButtonSize = Constants.moreTextButtonSize
         }
         let moreTextButtonOrigin = CGPoint(x: Constants.moreTextButtonInsets.left, y: postLabelFrame.maxY)
         let moreTextButtonFrame = CGRect(origin: moreTextButtonOrigin, size: moreTextButtonSize)
-        
+
         // MARK: Работа с attachmentFrame
+
         let attachmentTop = postLabelFrame.size == CGSize.zero ? Constants.postLabelInsets.top : moreTextButtonFrame.maxY + Constants.postLabelInsets.bottom
         var attachmentFrame = CGRect(x: 0, y: attachmentTop, width: .zero, height: .zero)
-        
+
         if let attachment = photoAttachments.first {
             let ratio = CGFloat(attachment.height) / Double(attachment.width)
             if photoAttachments.count == 1 {
@@ -89,12 +90,14 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
         }
 
         // MARK: Работа с bottomViewFrame
+
         let bottomViewTop = max(postLabelFrame.maxY, attachmentFrame.maxY)
         let bottomViewFrame = CGRect(x: 0, y: bottomViewTop, width: cardViewWidth, height: Constants.bottomViewHeight)
-        
+
         // MARK: Работа с totalHeight
+
         let totalHeight = bottomViewFrame.maxY + Constants.cardInsets.bottom
-        
+
         return Sizes(postLabelFrame: postLabelFrame, moreTextButtonFrame: moreTextButtonFrame, attachmentFrame: attachmentFrame, bottomViewFrame: bottomViewFrame, totalHeight: totalHeight)
     }
 }
@@ -102,10 +105,10 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
 extension String {
     func height(width: CGFloat, font: UIFont) -> CGFloat {
         let textSize = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let size = self.boundingRect(with: textSize,
-                                     options: .usesLineFragmentOrigin,
-                                     attributes: [NSAttributedString.Key.font: font],
-                                     context: nil)
+        let size = boundingRect(with: textSize,
+                                options: .usesLineFragmentOrigin,
+                                attributes: [NSAttributedString.Key.font: font],
+                                context: nil)
         return ceil(size.height)
     }
 }

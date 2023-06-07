@@ -9,9 +9,8 @@ import Foundation
 import UIKit
 
 class GalleryCollectionViewCell: UICollectionViewCell {
-    
     static let reuseId = "GalleryCollectionViewCell"
-    
+
     let imageViewCell: WebImageView = {
         let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -19,26 +18,27 @@ class GalleryCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = #colorLiteral(red: 0.9117177725, green: 0.918438971, blue: 0.927837193, alpha: 1)
         return imageView
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageViewCell)
 
         imageViewCell.fillSuperview()
     }
-    
+
     override func prepareForReuse() {
         imageViewCell.image = nil
     }
-    
+
     func set(imageURL: String?) {
         imageViewCell.setIcon(imageURL)
     }
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         imageViewCell.layer.masksToBounds = true

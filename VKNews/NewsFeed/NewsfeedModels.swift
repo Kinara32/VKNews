@@ -9,35 +9,34 @@
 import UIKit
 
 enum Newsfeed {
-    
     enum Model {
-        struct Request {
+        enum Request {
             enum RequestType {
                 case getNewsFeed
                 case getUser
                 case revealPostId(postId: Int)
             }
         }
-        struct Response {
+
+        enum Response {
             enum ResponseType {
                 case presentNewsFeed(feed: FeedResponse, revealdedPostIds: [Int])
                 case presentUserInfo(user: UserResponse?)
             }
         }
-        struct ViewModel {
+
+        enum ViewModel {
             enum ViewModelData {
                 case displayNewsFeed(feedViewModel: FeedViewModel)
                 case displayUser(userViewModel: UserViewModel)
             }
         }
     }
-    
 }
 
 struct FeedViewModel {
-    
     let cellArr: [Cell]
-    
+
     struct Cell: FeedCellViewModel {
         var postId: Int
         var iconUrlString: String
@@ -51,9 +50,8 @@ struct FeedViewModel {
         var photoAttachments: [FeedCellPhotoAttachmentViewModel]
         var sizes: FeedCellSizes
     }
-    
+
     struct FeedCellPhotoAttachment: FeedCellPhotoAttachmentViewModel {
-        
         var photoURL: String?
         var width: Int
         var height: Int
@@ -61,6 +59,5 @@ struct FeedViewModel {
 }
 
 struct UserViewModel: TitleViewViewModel {
-    
     var photoUrlString: String?
 }

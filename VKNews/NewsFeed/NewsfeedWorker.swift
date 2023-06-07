@@ -8,6 +8,4 @@
 
 import UIKit
 
-class NewsfeedService {
-    
-}
+class NewsfeedService {}

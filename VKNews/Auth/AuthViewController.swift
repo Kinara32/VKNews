@@ -8,9 +8,8 @@
 import UIKit
 
 class AuthViewController: UIViewController {
-
     private var authService: AuthService!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         authService = SceneDelegate.shared().authService
@@ -18,8 +17,7 @@ class AuthViewController: UIViewController {
 //        authService = (scene?.delegate as? SceneDelegate)!.authService
     }
 
-    @IBAction func signInTouch(_ sender: UIButton) {
+    @IBAction func signInTouch(_: UIButton) {
         authService.wakeUpSession()
     }
 }
-

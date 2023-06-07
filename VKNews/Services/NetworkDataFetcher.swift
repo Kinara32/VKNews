@@ -13,18 +13,16 @@ protocol DataFetcher {
 }
 
 struct NetworkDataFetcher: DataFetcher {
-
     let networking: Networking
     private let authService: AuthService
-    
+
     init(networking: Networking, authService: AuthService = SceneDelegate.shared().authService) {
         self.networking = networking
         self.authService = authService
     }
-    
+
     func getFeed(response: @escaping (FeedResponse?) -> Void) {
-        
-        networking.request(path: Api.newsFeed, params: ["filters":"post,photo"]) { data, error in
+        networking.request(path: Api.newsFeed, params: ["filters": "post,photo"]) { data, error in
             if let error = error {
                 print(error)
                 response(nil)
@@ -33,14 +31,14 @@ struct NetworkDataFetcher: DataFetcher {
             response(decoded?.response)
         }
     }
-    
+
     private func decodeJSON<T: Decodable>(type: T.Type, from data: Data?) -> T? {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        guard let data = data, let response = try? decoder.decode(type, from: data) else {return nil}
+        guard let data = data, let response = try? decoder.decode(type, from: data) else { return nil }
         return response
     }
-    
+
     func getUser(response: @escaping (UserResponse?) -> Void) {
         guard let userId = authService.userId else { return }
         networking.request(path: Api.user, params: ["user_ids": userId, "fields": "photo_100"]) { data, error in
